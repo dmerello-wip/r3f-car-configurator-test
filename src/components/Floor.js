@@ -7,7 +7,7 @@ export default function Floor(props) {
   return (
     <mesh ref={ref} castShadow receiveShadow>
       <planeBufferGeometry attach="geometry" args={[1000, 1000]}  />
-      <meshStandardMaterial attach="material" color="#d67a0c" />
+      <meshStandardMaterial attach="material" color={props.color} />
     </mesh>
   )
 }

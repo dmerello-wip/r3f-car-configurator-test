@@ -3,10 +3,10 @@ import React, { useMemo } from 'react'
 import { useLoader, useUpdate } from 'react-three-fiber'
 
 
-export default  Text = ({ children, vAlign = 'center', hAlign = 'center', size = 2,  ...props }) => {
+const TextMesh = ({ children, vAlign = 'center', hAlign = 'center', size = 2, height = 1, color = '#000000', ...props }) => {
   const font = useLoader(THREE.FontLoader, '/fonts/Montserrat_Bold.json')
 
-  const config = useMemo(() => ({ font, size: size, height: 1 }), [font]);
+  const config = useMemo(() => ({ font, size: size, height: height }), [font, size, height]);
 
   const mesh = useUpdate(
     (self) => {
@@ -21,10 +21,11 @@ export default  Text = ({ children, vAlign = 'center', hAlign = 'center', size =
 
   return (
     <mesh ref={mesh} castShadow receiveShadow>
-      <textGeometry attach="geometry" args={['ciao ciao', config]} />
-      <meshStandardMaterial attach="material" color="#d67a0c" />
+      <textGeometry attach="geometry" args={[children, config]} />
+      <meshStandardMaterial attach="material" color={color} />
     </mesh>
   )
 }
 
 
+export default TextMesh;

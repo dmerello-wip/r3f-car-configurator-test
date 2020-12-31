@@ -1,0 +1,22 @@
+$theme-colors: (
+        'primary':#9b000d,
+        'secondary': #ffffff,
+        'dark': #000,
+);
+
+// creates classes for color and background with each variant color
+@each $color, $val in $theme-colors {
+  .bg-#{$color} {
+    background-color: $val;
+  }
+  .color-#{$color} {
+    color: $val;
+  }
+  :root {
+    --color-#{$color}: #{$val};
+  }
+}
+
+@function getColor($key:'primary') {
+  @return map-get($theme-colors, $key)
+}

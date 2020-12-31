@@ -11,8 +11,8 @@ export default function DefaultCamera(props) {
     <PerspectiveCamera
       ref={ref}
       makeDefault
-      position={[0, 1, 20]}
-      rotation={[0, 0, 0]}
+      position={[6.5, 1.5, 5]}
+      rotation={[0, 1, 0]}
       far={50}
     />
     </>
