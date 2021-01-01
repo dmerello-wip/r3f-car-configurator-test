@@ -9,19 +9,21 @@ import Porsche from './Porsche'
 
 export default function Stage() {
 
-  const color = 'black';
+  const bgcolor = 'black';
+  const color = 'red';
 
   return (
     <div className="stage">
       <Suspense fallback={<Loading/>}>
         <Canvas shadowMap>
           <ambientLight intensity={0.4}/>
-          <fog attach="fog" args={[color, 2, 15]} />
-          <directionalLight intensity={8} position={[0, 2.5, -5]} angle={0} penumbra={1} castShadow />
+          <fog attach="fog" args={[bgcolor, 2, 15]} />
+          <directionalLight intensity={1} position={[0, 2.5, -5]} angle={0} castShadow />
+          <spotLight intensity={2} position={[-5, 1.8, 5]} angle={2} penumbra={1} castShadow />
           <Physics>
             <TextMesh size={2.6} height={0.1} color={'white'} vAlign="top">BELIN</TextMesh>
-            <Porsche position={[1,1.6,5]} rotation={[0,Math.PI/6, 0]}/>
-            <Floor position={[0,0,0]} color={color}/>
+            <Porsche position={[1,1.55,5]} rotation={[0,Math.PI/6, 0]}/>
+            <Floor position={[0,0,0]} color={bgcolor}/>
           </Physics>
           <DefaultCamera/>
         </Canvas>

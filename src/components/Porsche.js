@@ -6,12 +6,18 @@ source: https://sketchfab.com/3d-models/porsche-911-930-turbo-1975-de1ffd344c414
 title: Porsche 911 (930) Turbo 1975
 */
 
-import React, { useRef } from 'react'
+import React, { useRef, useEffect } from 'react'
 import { useGLTF } from 'drei'
 
 export default function Porsche(props) {
   const group = useRef()
-  const { nodes, materials } = useGLTF('/3d/scene.gltf')
+  const { nodes, materials } = useGLTF('/3d/scene.gltf');
+
+  useEffect(()=>{
+    // set initial colors to model materials (i don't like native ones)
+    materials['Material.001'].color.set('red');
+  }, []);
+
   return (
     <group ref={group} {...props} dispose={null} >
       <group rotation={[-Math.PI / 2, 0, 0]}>
