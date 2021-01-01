@@ -16,7 +16,7 @@ export default function Porsche(props) {
   useEffect(()=>{
     // set initial colors to model materials (i don't like native ones)
     materials['Material.001'].color.set(props.color);
-  }, []);
+  }, [materials, props.color]);
 
   return (
     <group ref={group} {...props} dispose={null} >

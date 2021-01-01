@@ -1,5 +1,6 @@
 import React, {useRef} from 'react'
-import {OrbitControls, PerspectiveCamera} from 'drei'
+// import {OrbitControls, PerspectiveCamera} from 'drei'
+import {PerspectiveCamera} from 'drei'
 
 export default function DefaultCamera(props) {
 

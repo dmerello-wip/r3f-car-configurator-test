@@ -1,4 +1,4 @@
-import React, { Suspense,useRef} from 'react'
+import React, { Suspense} from 'react'
 import { Canvas } from 'react-three-fiber'
 import { Physics } from 'use-cannon'
 import Floor from './Floor'
