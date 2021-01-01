@@ -7,6 +7,7 @@ export default function DefaultCamera(props) {
 
   return (
     <>
+    {/*<OrbitControls/>*/}
     <PerspectiveCamera
       ref={ref}
       makeDefault
