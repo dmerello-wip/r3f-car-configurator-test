@@ -1,5 +1,5 @@
 import React, {useRef} from 'react'
-import {PerspectiveCamera} from 'drei'
+import {OrbitControls, PerspectiveCamera} from 'drei'
 
 export default function DefaultCamera(props) {
 
@@ -7,13 +7,12 @@ export default function DefaultCamera(props) {
 
   return (
     <>
-    {/*<OrbitControls/>*/}
     <PerspectiveCamera
       ref={ref}
       makeDefault
-      position={[6.5, 1.5, 5]}
-      rotation={[0, 1, 0]}
-      far={50}
+      position={[4, 1, 8.5]}
+      rotation={[0, 0.65, 0]}
+      far={60}
     />
     </>
   )
