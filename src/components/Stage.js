@@ -64,7 +64,7 @@ export default function Stage() {
           <directionalLight intensity={1} position={[0, 2.5, -5]} angle={0} castShadow/>
           <spotLight intensity={2} position={[-5, 1.8, 12]} angle={2} penumbra={1} castShadow/>
           <Physics>
-            <TextMesh size={2.6} height={0.1} color={'white'} vAlign="top">{color.name}</TextMesh>
+            <TextMesh size={2.6} height={0.1} color={color.code} vAlign="top">{color.name}</TextMesh>
             <Porsche position={[1, 1.55, 5]} rotation={[0, Math.PI / 6, 0]} color={color.code}/>
             {getColorBoxes()}
             <Floor position={[0, 0, 0]} color={bgcolor}/>
