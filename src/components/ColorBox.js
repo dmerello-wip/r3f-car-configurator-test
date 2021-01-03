@@ -1,6 +1,5 @@
 import React, {useRef}  from 'react'
 import {useFrame} from 'react-three-fiber'
-import {RoundedBox} from 'drei'
 
 export default function ColorBox({index, color, position, action}) {
 
@@ -12,17 +11,14 @@ export default function ColorBox({index, color, position, action}) {
   });
 
   return (
-    <RoundedBox
+    <mesh
       ref={boxRef}
       position={position}
-      args={[0.4, 0.4, 0.4]}
-      radius={0.1}
-      smoothness={10}
       castShadow
-      onClick={action}
-    >
+      onClick={action}>
+      <dodecahedronBufferGeometry args={[0.2, 0]} />
       <meshPhongMaterial attach="material" color={color}/>
-    </RoundedBox>
+    </mesh>
   )
 }
 

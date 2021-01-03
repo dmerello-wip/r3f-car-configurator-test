@@ -40,7 +40,7 @@ export default function Stage() {
           <ambientLight intensity={0.4}/>
           <fog attach="fog" args={[bgcolor, 2, 15]}/>
           <directionalLight intensity={1} position={[0, 2.5, -5]} angle={0} castShadow/>
-          <spotLight intensity={2} position={[-5, 1.8, 5]} angle={2} penumbra={1} castShadow/>
+          <spotLight intensity={2} position={[-5, 1.8, 12]} angle={2} penumbra={1} castShadow/>
           <Physics>
             <TextMesh size={2.6} height={0.1} color={'white'} vAlign="top">porsche</TextMesh>
             <Porsche position={[1, 1.55, 5]} rotation={[0, Math.PI / 6, 0]} color={color}/>
