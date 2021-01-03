@@ -22,15 +22,11 @@ export default function Stage() {
           color={colors[i]}
           position={[3.5-i/1.5, 1, 4]}
           action={()=>{
-            handleColorBoxHit(colors[i]);
+            setColor(colors[i]);
           }}
         />
       )
     });
-  };
-
-  const handleColorBoxHit = (selectedColor)=>{
-    setColor(selectedColor);
   };
 
   return (
